@@ -4,7 +4,7 @@ import openai
 import os
 
 # Pobieramy zmienne środowiskowe (Render nie lubi trzymania haseł w kodzie)
-TOKEN = 7930835004:AAF9hXnDNVpsSRLPP7N-kIaYC3GW-r0YriA ("TELEGRAM_TOKEN")
+TOKEN = "7930835004:AAF9hXnDNVpsSRLPP7N-kIaYC3GW-r0YriA" ("TELEGRAM_TOKEN")
 OPENAI_API_KEY = "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"("OPENAI_API_KEY")
 
 openai.api_key = OPENAI_API_KEY
