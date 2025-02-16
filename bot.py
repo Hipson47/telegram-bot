@@ -3,11 +3,18 @@ import requests
 import openai
 import os
 
-# Pobieramy zmienne środowiskowe (Render nie lubi trzymania haseł w kodzie)
-TOKEN = "7930835004:AAF9hXnDNVpsSRLPP7N-kIaYC3GW-r0YriA" ("TELEGRAM_TOKEN")
-OPENAI_API_KEY = "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"("OPENAI_API_KEY")
 
-openai.api_key = OPENAI_API_KEY
+# Pobieranie kluczy API z zmiennych środowiskowych
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+
+if not OPENAI_API_KEY or not TELEGRAM_BOT_TOKEN:
+    raise ValueError("Brak klucza API! Upewnij się, że dodałeś zmienne środowiskowe w Render.")
+
+# Teraz możesz używać tych zmiennych w kodzie
+print(f"OpenAI API Key: {OPENAI_API_KEY[:5]}...")  # Podgląd (bezpieczny skrót)
+print(f"Telegram Bot Token: {TELEGRAM_BOT_TOKEN[:5]}...")
+
 
 app = Flask(__name__)
 
