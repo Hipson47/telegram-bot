@@ -1,6 +1,4 @@
+Flask
+pyTelegramBotAPI
 openai
-requests
-flask
-python-telegram-bot
-python-dotenv
 gunicorn
